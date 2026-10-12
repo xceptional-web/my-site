@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name</title>
+<style>
+  :root {
+    --bg: #f6f7f4;
+    --text: #1d2420;
+    --muted: #5b655f;
+    --accent: #1f5d4a;
+    --accent-text: #ffffff;
+    --line: #d9ded8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141a17;
+      --text: #eef2ee;
+      --muted: #a3ada6;
+      --accent: #5fc3a0;
+      --accent-text: #0f1a15;
+      --line: #2a3430;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+  }
+  main { max-width: 640px; margin: 0 auto; padding: 72px 24px; }
+  h1 { font-size: 2.6rem; line-height: 1.15; margin: 0 0 12px; }
+  .tagline { font-size: 1.2rem; color: var(--muted); margin: 0 0 32px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 56px; }
+  .btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 8px;
+    border: 2px solid var(--accent);
+    font: 600 1rem system-ui, sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    color: var(--accent);
+  }
+  .btn.primary { background: var(--accent); color: var(--accent-text); }
+  .btn:hover { opacity: .85; }
+  .btn:focus-visible { outline: 3px solid var(--text); outline-offset: 2px; }
+  h2 { font-size: 1.4rem; margin: 0 0 12px; padding-top: 24px; border-top: 1px solid var(--line); }
+  section { margin-bottom: 40px; }
+  ul { padding-left: 20px; }
+  #more { display: none; }
+  footer { color: var(--muted); font: .9rem system-ui, sans-serif; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Your Name</h1>
+  <p class="tagline">One line about who you are and what you do.</p>
+
+  <!-- BUTTONS: change the text and the links -->
+  <div class="buttons">
+    <a class="btn primary" href="mailto:youremail@example.com">Email me</a>
+    <a class="btn" href="https://wa.me/234XXXXXXXXXX">WhatsApp</a>
+    <a class="btn" href="tel:+234XXXXXXXXXX">Call</a>
+    <a class="btn" href="your-cv.pdf" download>Download CV</a>
+    <button class="btn" id="toggle" type="button">Show more</button>
+  </div>
+
+  <section>
+    <h2>About</h2>
+    <p>Write two or three sentences about yourself here.</p>
+  </section>
+
+  <section>
+    <h2>Work</h2>
+    <ul>
+      <li>Project or experience one</li>
+      <li>Project or experience two</li>
+      <li>Project or experience three</li>
+    </ul>
+  </section>
+
+  <section id="more">
+    <h2>More</h2>
+    <p>This section appears when the visitor clicks "Show more". Add anything extra here.</p>
+  </section>
+
+  <footer>&copy; 2026 Your Name</footer>
+</main>
+
+<script>
+  var toggle = document.getElementById("toggle");
+  var more = document.getElementById("more");
+  toggle.addEventListener("click", function () {
+    var open = more.style.display === "block";
+    more.style.display = open ? "none" : "block";
+    toggle.textContent = open ? "Show more" : "Hide";
+  });
+</script>
+</body>
+</html>
